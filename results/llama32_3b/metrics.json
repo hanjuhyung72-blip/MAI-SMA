@@ -1,0 +1,231 @@
+{
+  "model": "Llama 3.2 3B",
+  "alias": "mai-sma-llama3.2-8k:3b",
+  "identity": {
+    "name": "mai-sma-llama3.2-8k:3b",
+    "digest": "a2e8a97858cfa9801debb9b3243bf46365fc430a10fbd8471be84e7aab0e35e4",
+    "size": 2019392758,
+    "details": {
+      "parent_model": "llama3.2:3b",
+      "format": "gguf",
+      "family": "llama",
+      "families": [
+        "llama"
+      ],
+      "parameter_size": "3.2B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 131072,
+      "embedding_length": 3072
+    }
+  },
+  "dataset_documents": 1000,
+  "aggregate": {
+    "task": "agg",
+    "items": 100,
+    "strict": 29,
+    "norm": 29,
+    "strict_pct": 29.0,
+    "norm_pct": 29.0,
+    "by_difficulty": {
+      "easy": {
+        "strict": 13,
+        "norm": 13,
+        "total": 25
+      },
+      "medium": {
+        "strict": 4,
+        "norm": 4,
+        "total": 31
+      },
+      "hard": {
+        "strict": 12,
+        "norm": 12,
+        "total": 44
+      }
+    },
+    "abstain_ok": 0,
+    "abstain_total": 8,
+    "over_abstain": 0,
+    "exec_error": 7,
+    "api_error": 0,
+    "dialect_recovered": 0,
+    "compare": {
+      "items": 90,
+      "excluded": 10,
+      "excluded_ids": [
+        "Q032",
+        "Q033",
+        "Q047",
+        "Q048",
+        "Q067",
+        "Q069",
+        "Q071",
+        "Q079",
+        "Q082",
+        "Q091"
+      ],
+      "strict": 28,
+      "norm": 28
+    },
+    "by_rule": {
+      "라벨 1(프롬프트 규칙 1) 조인키(VESSELCODE, DOC_NO)": {
+        "strict": 2,
+        "total": 8
+      },
+      "라벨 2(프롬프트 규칙 3) 인공 기준일 6쌍 제외": {
+        "strict": 0,
+        "total": 5
+      },
+      "라벨 3(프롬프트 규칙 4) 소요시간 신뢰불가→기권": {
+        "strict": 1,
+        "total": 3
+      },
+      "라벨 4(프롬프트 규칙 4) 투입인원 신뢰불가→기권": {
+        "strict": 0,
+        "total": 3
+      },
+      "라벨 5(프롬프트 규칙 6) 소모부품 희소→기권/직접 계수": {
+        "strict": 0,
+        "total": 4
+      },
+      "라벨 6(프롬프트 규칙 5) 작업자→PIC": {
+        "strict": 2,
+        "total": 4
+      },
+      "라벨 7(프롬프트 규칙 7) 동의어 정확일치": {
+        "strict": 1,
+        "total": 5
+      },
+      "라벨 8(프롬프트 규칙 8) 호기 MACH_NO": {
+        "strict": 0,
+        "total": 4
+      },
+      "라벨 9(프롬프트 규칙 10) 부분문자열 함정(= 비교)": {
+        "strict": 2,
+        "total": 4
+      },
+      "라벨 11(프롬프트 규칙 11) CRITICAL_YN(라인) vs CRITICALPMS_YN": {
+        "strict": 2,
+        "total": 2
+      },
+      "라벨 12(프롬프트 규칙 12) MACH_DESC 테이블별 형식": {
+        "strict": 2,
+        "total": 2
+      }
+    },
+    "timing": {
+      "n": 100,
+      "mean": 4.83,
+      "median": 3.77,
+      "max": 69.54,
+      "total_min": 8.1
+    },
+    "tokens": {
+      "prompt": 726459,
+      "completion": 2128,
+      "n": 100
+    }
+  },
+  "procedural": {
+    "task": "proc",
+    "items": 100,
+    "steps": 844,
+    "exact": 482,
+    "misrec": 250,
+    "halluc": 112,
+    "num_ok": 90,
+    "num_all": 101,
+    "legacy_parsed": 70,
+    "json_valid": 70,
+    "step_yield": 88,
+    "abstain": 0,
+    "gen_fail": 12,
+    "legacy_refuse": 12,
+    "lack_raw": 5,
+    "lack": 1,
+    "api_error": 10,
+    "exact_pct": 57.1,
+    "misrec_pct": 29.6,
+    "halluc_pct": 13.3,
+    "anywhere": 732,
+    "anywhere_pct": 86.7,
+    "by_kind": {
+      "절차": {
+        "total": 32,
+        "steps": 246,
+        "exact": 96,
+        "step_yield": 25,
+        "abstain": 0,
+        "gen_fail": 7
+      },
+      "판정기준": {
+        "total": 29,
+        "steps": 108,
+        "exact": 34,
+        "step_yield": 27,
+        "abstain": 0,
+        "gen_fail": 2
+      },
+      "이상소견": {
+        "total": 22,
+        "steps": 327,
+        "exact": 246,
+        "step_yield": 21,
+        "abstain": 0,
+        "gen_fail": 1
+      },
+      "부품": {
+        "total": 17,
+        "steps": 163,
+        "exact": 106,
+        "step_yield": 15,
+        "abstain": 0,
+        "gen_fail": 2
+      }
+    },
+    "timing": {
+      "n": 90,
+      "mean": 43.54,
+      "median": 22.19,
+      "max": 172.47,
+      "total_min": 65.3
+    },
+    "tokens": {
+      "prompt": 132595,
+      "completion": 42349,
+      "n": 90
+    }
+  },
+  "protocol": {
+    "timeout_sec": 180,
+    "retries": 0,
+    "agg_condition": "F",
+    "agg_phrasing": "NL",
+    "proc_language": "en",
+    "output_tokens": {
+      "agg": 400,
+      "proc": 2200
+    }
+  },
+  "started_at": "2026-11-12T18:56:38.268667+09:00",
+  "ended_at": "2026-11-12T20:40:08.626832+09:00",
+  "api_request": {
+    "agg": {
+      "model": "mai-sma-llama3.2-8k:3b",
+      "temperature": 0.0,
+      "seed": 42,
+      "max_tokens": 400
+    },
+    "proc": {
+      "model": "mai-sma-llama3.2-8k:3b",
+      "temperature": 0.0,
+      "seed": 42,
+      "max_tokens": 2200
+    }
+  },
+  "source_sha256": {
+    "eval\\run_eval.py": "1e149981604e6deeba44d3c9f7e4bc8b8011b881511585a724da92d1d7d72298",
+    "eval\\eval_from_config.py": "c1a041bfd8cf6456faf9cde6cec745dc6f0340869a1a3444cb235df3882b07fc",
+    "app\\build_prompt100.py": "cec4e4f33327ca05b4b7bc10df221228d11279457b4e0f2a6c64b1bad709489a"
+  }
+}
