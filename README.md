@@ -62,9 +62,9 @@ StudentKitLauncher.cs는 제공 프로그램을 별도 창 없이 시작하고 �
 
 | 과제 | 위치 | 상태 |
 |---|---|---|
-| 1. DuckDB 적용 | app/, tools/, config.example.json | 새 1,000건 기준으로 실행 확인. 최종 화면 재촬영 필요 |
+| 1. DuckDB 적용 | app/, tools/, config.example.json | 1,000문서 학생판 실행 확인. [논문용 실제 앱 화면](evidence/app/) 추가 |
 | 3. Colab GPU ML/DL | notebooks/, evidence/colab/ | 기존 실제 MNIST 실습 사진 5장 유지 |
-| 4. Codex 증빙 | evidence/codex/ | 기존 대화 3장. 이번 이식/점검 대화 2장 추가 가능 |
+| 4. Codex 증빙 | evidence/codex/ | 실제 대화 화면 총 5장. 2026-11-16에 2장 보완 |
 | 5. 소스 공개 정리 | 이 저장소 | 비공개 DB와 문맥·정답 데이터 제외 |
 
 Colab의 MNIST 학습은 별도 실습이며 Llama 모델을 학습한 실험이 아닙니다. 동봉 노트북은 실행 전 원본이고 실제 GPU 실행 화면은 증빙 폴더에 있습니다.
@@ -72,7 +72,7 @@ Colab의 MNIST 학습은 별도 실습이며 Llama 모델을 학습한 실험이
 
 ## 원본 보존
 
-제공된 app/ 및 모든 연구 프롬프트·라우터·채점기 소스를 변경하지 않았습니다. config.json만 로컬 주소·모델에 맞췄습니다.
+제공된 연구 프롬프트·라우터·채점기와 추론·SQL 실행 코드는 유지했습니다. config.json을 로컬 주소·모델에 맞췄으며, 2026-11-20 HTML 화면에서 모델 ID를 사람이 읽기 쉬운 `Llama 3.2 3B`로 표시하도록 수정했습니다. 실제 연결 모델 ID는 `mai-sma-llama3.2-8k:3b` 그대로입니다.
 압축파일에 들어 있던 파생 pickle을 그대로 역직렬화하지 않고, 원본 DB로 같은 검색 색인을 다시 생성했습니다.
 문서에 나온 전체 선대 기준 통계를 1,000건 표본 수치로 임의 변경하지 않았습니다.
 
