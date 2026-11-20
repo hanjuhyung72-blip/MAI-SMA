@@ -1301,12 +1301,16 @@ async function boot(){
   }catch(e){}
   // 사이드바 상단에는 이름만 크게, 양자화는 그 아래 작게 둔다
   $('#bspark').innerHTML=BRANDMARK;
-  $('#sbmodel').textContent=(INFO.model||'').replace(/\s*\([^)]*\)\s*$/,'');
+  // 표시 이름과 실제 API 모델 ID를 구분한다. 연결과 추론에는 INFO.model의 ID를 그대로 쓴다.
+  const rawModel=(INFO.model||'').replace(/\s*\([^)]*\)\s*$/,'');
+  const isLlama32B3=/llama3\.2/i.test(rawModel) && /[:_-]3b(?:$|[._-])/i.test(rawModel);
+  $('#sbmodel').textContent=isLlama32B3 ? 'Llama 3.2 3B' : rawModel;
+  $('#sbmodel').title=rawModel;
   // 내부 표기와 뜻을 함께 보인다. 표기만으로는 읽히지 않고,
   // 뜻만 두면 어느 파일을 쓰는지 대조할 수 없다.
   $('#sbquant').textContent=
     INFO.quant ? `${INFO.quant} (${INFO.quant_text||'quantized'})`
-               : (INFO.quant_text||'');
+               : (INFO.quant_text||(INFO.remote ? 'REMOTE INFERENCE' : 'LOCAL INFERENCE'));
   // 학생 이식판: 색인 = 정비 문서 기록(master) + 참고 기록(qa_proc_context)
   $('#sidemeta').textContent= INFO.docs_ref
     ? `${INFO.docs.toLocaleString()} records indexed · ${(INFO.docs-INFO.docs_ref).toLocaleString()} documents`
